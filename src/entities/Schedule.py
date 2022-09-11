@@ -14,7 +14,7 @@ class Schedule:
   
   @property
   def startsAt(self):
-    return self._startsAt
+    return self._startsAt.strftime("%m/%d/%Y, %H:%M:%S")
   
   @startsAt.setter
   def startsAt(self, value):
@@ -22,7 +22,7 @@ class Schedule:
   
   @property
   def endsAt(self):
-    return self._endsAt
+    return self._endsAt.strftime("%m/%d/%Y, %H:%M:%S")
   
   @endsAt.setter
   def endsAt(self, value):
