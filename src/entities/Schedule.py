@@ -1,5 +1,12 @@
+import datetime
+
 class Schedule:
   def __init__(self, customer, startsAt, endsAt):
+    current_date = datetime.datetime.now()
+    if (startsAt < current_date or endsAt < current_date):
+      raise Exception("Dates provided can't be in the past")
+    if (endsAt <= startsAt):
+      raise Exception("End Date provided can't be before than Start Date")
     self.customer = customer
     self.startsAt = startsAt
     self.endsAt = endsAt
